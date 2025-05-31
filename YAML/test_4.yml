@@ -10,5 +10,18 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4.2.2
 
-            - name: ls
-              uses: ./.github/actions/my-action
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v4.4.0
+              with:
+                node-version: latest
+
+            - name: node version
+              run: node --version
+            
+            - name: PHP
+              uses: shivammathur/setup-php@2.33.0
+              with: 
+                php-version: '8.3'
+
+            - name: php version
+              run: php --version
