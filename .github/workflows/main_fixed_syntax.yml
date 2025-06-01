@@ -1,12 +1,13 @@
 name: Test
+
 on: [push]
+
 jobs:
   say-hello:
     runs-on: ubuntu-latest
-    env:
-      MY_VAR: Mi variable de entorno
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
       - name: Test
+        env: 
+          STEP_MY_VAR: Nivel Stop
         run: echo "Valor: $MY_VAR"
