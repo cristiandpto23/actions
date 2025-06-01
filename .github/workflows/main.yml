@@ -3,14 +3,12 @@ name: Test
 on: [push]
 
 jobs:
-    test-build:
+    say-hello:
         runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4.2.2
+        env:
+          MY_VAR: Mi variable de entorno
 
-            - name: ls
-              uses: ./.github/actions/my-action
-              with:
-                  message: 'Fernando'
+        steps:
+            - name: Test
+              run: run "Valor: $MY_VAR" 
